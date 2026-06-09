@@ -1,0 +1,24 @@
+/* Stars background */
+.stars {
+    background-image: url("resources/flash.gif");
+    top: 0%;
+    left: 0%;
+    font-family: "Bagnard Regular";
+}
+
+.centered-overlay {
+  position: fixed;   /* Locks the image to the screen viewport */
+  top: 50%;          /* Moves the top edge to the middle of the screen */
+  left: 50%;         /* Moves the left edge to the middle of the screen */
+  
+  /* Shifts the image backward by half its own width and height 
+     to achieve a flawless optical centre */
+  transform: translate(-50%, -50%); 
+  
+  /* Optional: Ensures other scrolling text or elements pass underneath it */
+  z-index: 9999; 
+  
+  /* Optional: Prevents the image from bursting off small mobile screens */
+  max-width: 90%;
+  height: auto;
+}
