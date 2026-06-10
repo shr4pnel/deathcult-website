@@ -18,16 +18,19 @@
   /* Optional: Ensures other scrolling text or elements pass underneath it */
   z-index: 9999; 
   
-  /* ====== SCALE CONTROL ====== */
-  width: 45%;        /* Default width for desktop screens */
-  max-width: 600px;  /* Caps the size so it doesn't get massive on huge monitors */
-  height: auto;      /* Maintains aspect ratio */
+  /* Optional: Prevents the image from bursting off small mobile screens */
+  max-width: 600px;  /* Set a max-pixel ceiling for big desktop monitors */
+  height: auto;
+  
+  /* Desktop Size Rule */
+  width: 50%;        /* Default width for desktop screens */
 }
 
-/* ====== MOBILE & TABLET RESPONSIVENESS ====== */
-/* This kicks in only when the screen width is 768px or narrower */
-@media (max-width: 768px) {
+/* ====== TUNED MOBILE RESPONSIVENESS ====== */
+/* This kicks in when the screen width is 900px or narrower to catch all phones */
+@media (max-width: 900px) {
   .centered-overlay {
-    width: 85%;      /* Bumps the size up so it looks great on phones */
+    width: 95% !important; /* Forces the logo to fill 95% of the screen on mobile */
+    max-width: 100%;       /* Lifts the desktop pixel ceiling for smaller viewports */
   }
 }
