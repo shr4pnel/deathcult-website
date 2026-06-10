@@ -18,7 +18,16 @@
   /* Optional: Ensures other scrolling text or elements pass underneath it */
   z-index: 9999; 
   
-  /* Optional: Prevents the image from bursting off small mobile screens */
-  max-width: 90%;
-  height: auto;
+  /* ====== SCALE CONTROL ====== */
+  width: 45%;        /* Default width for desktop screens */
+  max-width: 600px;  /* Caps the size so it doesn't get massive on huge monitors */
+  height: auto;      /* Maintains aspect ratio */
+}
+
+/* ====== MOBILE & TABLET RESPONSIVENESS ====== */
+/* This kicks in only when the screen width is 768px or narrower */
+@media (max-width: 768px) {
+  .centered-overlay {
+    width: 85%;      /* Bumps the size up so it looks great on phones */
+  }
 }
