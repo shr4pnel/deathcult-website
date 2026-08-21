@@ -1,3 +1,16 @@
+/* Custom font, loaded from the resources folder */
+@font-face {
+    font-family: "Playfair Display";
+    src: url("resources/PlayfairDisplay-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("resources/PlayfairDisplay-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
 /* Stars background */
 .stars {
     background-image: url("resources/flash.gif");
@@ -6,24 +19,91 @@
     font-family: "Bagnard Regular";
 }
 
+/* Logo: sits in normal document flow at the top of the page,
+   so it scrolls away with the rest of the content instead of
+   staying fixed to the viewport. */
+.logo-wrap {
+    text-align: center;
+    padding-top: 40px;
+}
+
 .centered-overlay {
-  position: fixed;   /* Locks the image to the screen viewport */
-  top: 50%;          /* Moves the top edge to the middle of the screen */
-  left: 50%;         /* Moves the left edge to the middle of the screen */
-  
-  /* Shifts the image backward by half its own width and height 
-     to achieve a flawless optical centre */
-  transform: translate(-50%, -50%); 
-  
-  /* Optional: Ensures other scrolling text or elements pass underneath it */
-  z-index: 9999; 
-  
+  display: inline-block;
+
   /* Optional: Prevents the image from bursting off small mobile screens */
   max-width: 600px;  /* Set a max-pixel ceiling for big desktop monitors */
   height: auto;
-  
+
   /* Desktop Size Rule */
   width: 50%;        /* Default width for desktop screens */
+}
+
+#marble .title {
+    color: #000000;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(50, 46, 38, 0.6);
+}
+
+#marble .subtitle {
+    color: #000000;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(50, 46, 38, 0.6);
+}
+
+/* Marble background: a table roughly two thirds of the window's width,
+   centered under the logo. Border/shadow styling matches the "outset"
+   panel treatment used on benjiaird.co.uk, in a stone tone pulled from
+   the marble texture instead of the sand-site's tan. */
+#marble {
+    background-image: url("resources/marble.gif");
+    font-family: "Playfair Display";
+    width: 66%;
+    margin: 40px auto;
+    border: 0.5rem outset #cccccc;
+    box-shadow: 5px 5px 7px rgba(50, 46, 38, 1);
+    box-sizing: border-box;
+}
+
+#marble .break {
+  display: block;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  border-style: inset;
+  border-width: 3px;
+  color: #cccccc;
+}
+
+#marble .nav{
+  color: #FCC24C;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 2px black;
+  text-decoration: underline;
+}
+
+#marble td {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+#marble .body{
+    color: #000000;
+    font-family: "Playfair Display";
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(50, 46, 38, 0.6);
 }
 
 /* ====== TUNED MOBILE RESPONSIVENESS ====== */
@@ -32,5 +112,9 @@
   .centered-overlay {
     width: 95% !important; /* Forces the logo to fill 95% of the screen on mobile */
     max-width: 100%;       /* Lifts the desktop pixel ceiling for smaller viewports */
+  }
+
+  #marble {
+    width: 90%; /* Keep the marble table readable on small screens */
   }
 }
