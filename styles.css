@@ -66,10 +66,13 @@
     background-image: url("resources/marble.gif");
     font-family: "Playfair Display";
     width: 66%;
+    max-width: 100%;
     margin: 40px auto;
     border: 0.5rem outset #cccccc;
     box-shadow: 5px 5px 7px rgba(50, 46, 38, 1);
     box-sizing: border-box;
+    table-layout: fixed; /* keep the table at its set width instead of
+                             stretching to fit long/large text content */
 }
 
 #marble .break {
@@ -94,6 +97,7 @@
 #marble td {
     text-align: center;
     padding: 30px 20px;
+    overflow-wrap: break-word; /* let long words wrap instead of forcing the table wider */
 }
 
 #marble .body{
@@ -116,5 +120,20 @@
 
   #marble {
     width: 90%; /* Keep the marble table readable on small screens */
+  }
+
+  /* The 5rem/2rem desktop sizes are too wide to fit a phone screen
+     and were forcing the table (and the whole page) wider than the
+     viewport. Scale them down so everything wraps normally instead.
+     The title uses a fluid clamp() rather than one fixed size: a flat
+     2.5rem still didn't leave "DEATHCULT" enough room on the narrowest
+     phones, which forced it to break mid-word — this shrinks further
+     as the screen narrows so the whole word always fits on one line. */
+  #marble .title {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  #marble .subtitle {
+    font-size: 1.25rem;
   }
 }
