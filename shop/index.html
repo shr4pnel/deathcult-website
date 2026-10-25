@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="../resources/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="../resources/favicon.svg" />
+	<link rel="shortcut icon" href="../resources/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../resources/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="Deathcult Games" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>DEATHCULT GAMES - SHOP</title>
+</head>
+<body class="stars">
+	<table id="marble">
+		<tr>
+			<td>
+				<p class="title">DEATHCULT SHOP</p>
+				<br>
+				<hr class="break">
+				<br>
+				<!-- Countdown until launch, then forwards visitors to the shop (see resources/launch.js) -->
+				<div id="drop-before">
+					<p class="body">THE DEATHCULT TEE. LIMITED TO 30.</p>
+					<p class="body">AVAILABLE THURSDAY 29TH OCTOBER, 1PM UK TIME</p>
+					<br>
+					<p class="countdown" id="countdown">&nbsp;</p>
+				</div>
+				<div id="drop-after" hidden>
+					<p class="body">TAKING YOU TO THE SHOP...</p>
+					<br>
+					<a class="nav drop-link" href="https://deathcultgames.square.site">ENTER THE SHOP</a>
+				</div>
+				<br>
+				<hr class="break">
+				<br>
+				<a class="nav" href="../">Back to DEATHCULT GAMES</a>
+			</td>
+		</tr>
+	</table>
+	<script src="../resources/launch.js"></script>
+	<script>
+		dcStartCountdown("countdown", function () {
+			document.getElementById("drop-before").hidden = true;
+			document.getElementById("drop-after").hidden = false;
+			window.location.replace(DC_SHOP_URL);
+		});
+	</script>
+</body>
+</html>

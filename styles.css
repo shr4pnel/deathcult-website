@@ -94,6 +94,33 @@
   text-decoration: underline;
 }
 
+/* DROP 01: bigger version of the nav link, plus the countdown */
+#marble .drop-link {
+  font-size: 2.5rem;
+}
+
+/* Playfair Display draws old-style numbers by default ("01" looks like "o1"),
+   so use standard numbers in the drop text */
+#drop-before, #drop-after {
+  font-variant-numeric: lining-nums;
+}
+
+/* Bold teaser text above the countdown (main page) */
+#marble .body.drop-text {
+    font-weight: bold;
+}
+
+#marble .countdown {
+    color: #000000;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(50, 46, 38, 0.6);
+    font-variant-numeric: lining-nums tabular-nums; /* standard numbers, and stops the digits jiggling as they change */
+}
+
 #marble td {
     text-align: center;
     padding: 30px 20px;
@@ -135,5 +162,13 @@
 
   #marble .subtitle {
     font-size: 1.25rem;
+  }
+
+  #marble .drop-link {
+    font-size: 1.75rem;
+  }
+
+  #marble .countdown {
+    font-size: 2rem;
   }
 }

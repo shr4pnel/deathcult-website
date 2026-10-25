@@ -26,6 +26,20 @@
 				<br>
 				<hr class="break">
 				<br>
+				<!-- DROP 01: countdown until launch, then the shop link (see resources/launch.js) -->
+				<div id="drop-before">
+					<p class="body drop-text">THE DEATHCULT TEE. LIMITED TO 30.</p>
+					<p class="body drop-text">AVAILABLE THURSDAY 29TH OCTOBER, 1PM UK TIME</p>
+					<br>
+					<p class="countdown" id="countdown">&nbsp;</p>
+				</div>
+				<div id="drop-after" hidden>
+					<a class="nav drop-link" href="https://deathcultgames.square.site">SHOP DROP 01: THE DEATHCULT TEE</a>
+					<br>- Embroidered. Limited to 30.
+				</div>
+				<br>
+				<hr class="break">
+				<br>
 				<p class="body">DEATHCULT GAMES is hard at work on our debut title 'cargame'. A blend of social simulation, car customisation and street racing. If you'd like to learn more, check out the links below:</p>
 				<br>
 				<a class="nav" href="https://discord.gg/gJxHfp9fyr">cargame Discord server</a>
@@ -42,5 +56,12 @@
 			</td>
 		</tr>
 	</table>
+	<script src="resources/launch.js"></script>
+	<script>
+		dcStartCountdown("countdown", function () {
+			document.getElementById("drop-before").hidden = true;
+			document.getElementById("drop-after").hidden = false;
+		});
+	</script>
 </body>
 </html>
